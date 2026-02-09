@@ -11,12 +11,16 @@ struct Restaurant {
     double deliveryFee;
 };
 
-int main() {
+Restaurant populateRestaurant();
 
+int main() {
+    Restaurant kfc{populateRestaurant()};
     return 0;
 }
 
 Restaurant populateRestaurant() {
-    Restaurant temp{};
-    
+    Restaurant temp;
+    cout << "Enter the address: ";
+    getline(cin, temp.address);
+
 }
