@@ -1,5 +1,6 @@
 // COMSC-210 | Lab 3A | Barsbek
 #include <iostream>
+#include <cctype>
 #include <string>
 using namespace std;
 
@@ -16,7 +17,8 @@ void printRestaurant(const Restaurant& userRestaurant);
 
 int main() {
     Restaurant kfc{populateRestaurant()};
-    cout << kfc.alcohol;
+    printRestaurant(kfc);
+    // cout << kfc.alcohol;
 
     return 0;
 }
@@ -54,4 +56,8 @@ Restaurant populateRestaurant() {
         temp.alcohol = false;
 
     return temp;
+}
+
+void printRestaurant(const Restaurant& userRestaurant) {
+    cout << "Address: " << userRestaurant.address << '\n';
 }
