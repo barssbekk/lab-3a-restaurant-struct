@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cctype>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 struct Restaurant {
@@ -18,8 +19,6 @@ void printRestaurant(const Restaurant& userRestaurant);
 int main() {
     Restaurant kfc{populateRestaurant()};
     printRestaurant(kfc);
-    // cout << kfc.alcohol;
-
     return 0;
 }
 
@@ -68,6 +67,6 @@ void printRestaurant(const Restaurant& userRestaurant) {
     else
         cout << "No";
     cout << '\n';
-
-
+    cout << fixed << setprecision(2);
+    cout << "\tDelivery Fee: " << userRestaurant.deliveryFee << '\n';
 }
