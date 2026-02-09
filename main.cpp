@@ -12,6 +12,7 @@ struct Restaurant {
 };
 
 Restaurant populateRestaurant();
+void printRestaurant(const Restaurant& userRestaurant);
 
 int main() {
     Restaurant kfc{populateRestaurant()};
