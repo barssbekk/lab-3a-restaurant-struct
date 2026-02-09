@@ -15,3 +15,8 @@ int main() {
 
     return 0;
 }
+
+Restaurant populateRestaurant() {
+    Restaurant temp{};
+    
+}
