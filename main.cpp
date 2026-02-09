@@ -38,12 +38,15 @@ Restaurant populateRestaurant() {
     char input;
     cin >> input;
     input = toupper(input);
-
     while (input != 'Y' && input != 'N') {
         cout << "Wrong input! Try again.\n Y/N only: ";
         cin >> input;
         input = toupper(input);
     }
+
+    cout << "Enter the delivery fee: ";
+    cin >> temp.deliveryFee;
+    cin.ignore();
 
     if (input == 'Y')
         temp.alcohol = true;
