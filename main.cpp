@@ -1,7 +1,17 @@
 // COMSC-210 | Lab 3A | Barsbek
 #include <iostream>
+#include <string>
+using namespace std;
+
+struct Restaurant {
+    string address;
+    int rating;
+    int numSeats;
+    bool alcohol;
+    double deliveryFee;
+};
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
     return 0;
 }
