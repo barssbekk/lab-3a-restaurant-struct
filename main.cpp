@@ -31,5 +31,18 @@ Restaurant populateRestaurant() {
     cin >> temp.numSeats;
     cin.ignore();
 
+    cout << "Alcohol? Y/N: ";
+    char input;
+    cin >> input;
+    input = toupper(input);
+
+    while (input != 'Y' && input != 'N') {
+        cout << "Wrong input! Try again.\n Y/N only: ";
+        cin >> input;
+        input = toupper(input);
+    }
+
+
+
     return temp;
 }
