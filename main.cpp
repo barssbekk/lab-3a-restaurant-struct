@@ -59,5 +59,15 @@ Restaurant populateRestaurant() {
 }
 
 void printRestaurant(const Restaurant& userRestaurant) {
-    cout << "Address: " << userRestaurant.address << '\n';
+    cout << "\tAddress: " << userRestaurant.address << '\n';
+    cout << "\tRating: " << userRestaurant.rating << '\n';
+    cout << "\tNumber of Seats: " << userRestaurant.numSeats << '\n';
+    cout << "\tAlcohol: ";
+    if (userRestaurant.alcohol)
+        cout << "Yes";
+    else
+        cout << "No";
+    cout << '\n';
+
+
 }
