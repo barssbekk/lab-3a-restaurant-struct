@@ -15,6 +15,8 @@ Restaurant populateRestaurant();
 
 int main() {
     Restaurant kfc{populateRestaurant()};
+    cout << kfc.alcohol;
+
     return 0;
 }
 
@@ -42,7 +44,10 @@ Restaurant populateRestaurant() {
         input = toupper(input);
     }
 
-
+    if (input == 'Y')
+        temp.alcohol = true;
+    else
+        temp.alcohol = false;
 
     return temp;
 }
