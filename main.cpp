@@ -14,7 +14,7 @@ struct Restaurant {
 };
 
 Restaurant populateRestaurant();
-void printRestaurant(const Restaurant& userRestaurant);
+void printRestaurant(const Restaurant &userRestaurant);
 
 int main() {
     Restaurant kfc{populateRestaurant()};
@@ -22,6 +22,8 @@ int main() {
     return 0;
 }
 
+// populateRestaurant() asks the user for restaurant information
+// returns: a restaurant filled data with user input
 Restaurant populateRestaurant() {
     Restaurant temp;
     cout << "Enter the address: ";
@@ -55,6 +57,10 @@ Restaurant populateRestaurant() {
 
     cout << "Enter the delivery fee: ";
     cin >> temp.deliveryFee;
+    while (temp.deliveryFee < 0) {
+        cout << "Enter non-negative number :";
+        cin >> temp.deliveryFee;
+    }
     cin.ignore();
 
     if (input == 'Y')
@@ -65,7 +71,9 @@ Restaurant populateRestaurant() {
     return temp;
 }
 
-void printRestaurant(const Restaurant& userRestaurant) {
+// printRestaurant() outputs the restaurant info
+// arguments: const Restaurant& userRestaurant
+void printRestaurant(const Restaurant &userRestaurant) {
     cout << "-------------------------------\n";
     cout << "\tAddress: " << userRestaurant.address << '\n';
     cout << "\tRating: " << userRestaurant.rating << '\n';
@@ -76,7 +84,7 @@ void printRestaurant(const Restaurant& userRestaurant) {
     else
         cout << "No";
     cout << '\n';
-    cout << fixed << setprecision(2);
-    cout << "\tDelivery Fee: " << userRestaurant.deliveryFee << '\n';
+    cout << fixed << setprecision(2); // show 2 decimal for money
+    cout << "\tDelivery Fee: $" << userRestaurant.deliveryFee << '\n';
     cout << "-------------------------------\n";
 }
