@@ -29,10 +29,18 @@ Restaurant populateRestaurant() {
 
     cout << "Enter rating: ";
     cin >> temp.rating;
+    while (temp.rating > 10 || temp.rating < 0) {
+        cout << "Please, rate 0-10: ";
+        cin >> temp.rating;
+    }
     cin.ignore();
 
     cout << "Enter the number of seats: ";
     cin >> temp.numSeats;
+    while (temp.numSeats < 0) {
+        cout << "It can't be negative! Try again: ";
+        cin >> temp.numSeats;
+    }
     cin.ignore();
 
     cout << "Alcohol? Y/N: ";
@@ -58,6 +66,7 @@ Restaurant populateRestaurant() {
 }
 
 void printRestaurant(const Restaurant& userRestaurant) {
+    cout << "-------------------------------\n";
     cout << "\tAddress: " << userRestaurant.address << '\n';
     cout << "\tRating: " << userRestaurant.rating << '\n';
     cout << "\tNumber of Seats: " << userRestaurant.numSeats << '\n';
@@ -69,4 +78,5 @@ void printRestaurant(const Restaurant& userRestaurant) {
     cout << '\n';
     cout << fixed << setprecision(2);
     cout << "\tDelivery Fee: " << userRestaurant.deliveryFee << '\n';
+    cout << "-------------------------------\n";
 }
