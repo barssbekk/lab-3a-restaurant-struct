@@ -14,11 +14,21 @@ struct Restaurant {
 };
 
 Restaurant populateRestaurant();
-void printRestaurant(const Restaurant &userRestaurant);
+void printRestaurant(const Restaurant& userRestaurant);
 
 int main() {
     Restaurant kfc{populateRestaurant()};
     printRestaurant(kfc);
+
+    Restaurant burgerKing{populateRestaurant()};
+    printRestaurant(burgerKing);
+
+    Restaurant inandout{populateRestaurant()};
+    printRestaurant(inandout);
+
+    Restaurant dennys{populateRestaurant()};
+    printRestaurant(dennys);
+
     return 0;
 }
 
@@ -73,7 +83,7 @@ Restaurant populateRestaurant() {
 
 // printRestaurant() outputs the restaurant info
 // arguments: const Restaurant& userRestaurant
-void printRestaurant(const Restaurant &userRestaurant) {
+void printRestaurant(const Restaurant& userRestaurant) {
     cout << "-------------------------------\n";
     cout << "\tAddress: " << userRestaurant.address << '\n';
     cout << "\tRating: " << userRestaurant.rating << '\n';
