@@ -23,4 +23,13 @@ Restaurant populateRestaurant() {
     cout << "Enter the address: ";
     getline(cin, temp.address);
 
+    cout << "Enter rating: ";
+    cin >> temp.rating;
+    cin.ignore();
+
+    cout << "Enter the number of seats: ";
+    cin >> temp.numSeats;
+    cin.ignore();
+
+    return temp;
 }
